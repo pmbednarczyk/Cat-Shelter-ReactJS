@@ -9789,15 +9789,44 @@ var CatTable = exports.CatTable = function (_React$Component) {
     _inherits(CatTable, _React$Component);
 
     function CatTable() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, CatTable);
 
-        return _possibleConstructorReturn(this, (CatTable.__proto__ || Object.getPrototypeOf(CatTable)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CatTable.__proto__ || Object.getPrototypeOf(CatTable)).call.apply(_ref, [this].concat(args))), _this), _this.getCats = function (sex) {
+            var cats = _this.props.kitties.filter(function (cat) {
+                return cat.category === sex;
+            });
+
+            var catsRows = cats.map(function (cat, age) {
+                return _react2.default.createElement(
+                    'tr',
+                    { key: cat.name + cat.age },
+                    _react2.default.createElement(
+                        'td',
+                        null,
+                        cat.name
+                    ),
+                    _react2.default.createElement(
+                        'td',
+                        null,
+                        cat.age
+                    )
+                );
+            });
+            return catsRows;
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(CatTable, [{
         key: 'render',
         value: function render() {
-            console.log(this.props.kitties);
             return _react2.default.createElement(
                 'div',
                 null,
@@ -9834,34 +9863,7 @@ var CatTable = exports.CatTable = function (_React$Component) {
                                 'male'
                             )
                         ),
-                        _react2.default.createElement(
-                            'tr',
-                            null,
-                            _react2.default.createElement(
-                                'td',
-                                null,
-                                'Fidel'
-                            ),
-                            _react2.default.createElement(
-                                'td',
-                                null,
-                                '4'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'tr',
-                            null,
-                            _react2.default.createElement(
-                                'td',
-                                null,
-                                'Fidel'
-                            ),
-                            _react2.default.createElement(
-                                'td',
-                                null,
-                                '4'
-                            )
-                        ),
+                        this.getCats("male"),
                         _react2.default.createElement(
                             'tr',
                             null,
@@ -9871,20 +9873,7 @@ var CatTable = exports.CatTable = function (_React$Component) {
                                 'female'
                             )
                         ),
-                        _react2.default.createElement(
-                            'tr',
-                            null,
-                            _react2.default.createElement(
-                                'td',
-                                null,
-                                'Yude'
-                            ),
-                            _react2.default.createElement(
-                                'td',
-                                null,
-                                '4'
-                            )
-                        )
+                        this.getCats("female")
                     )
                 ),
                 _react2.default.createElement(_CategoryRow.CategoryRow, null),
