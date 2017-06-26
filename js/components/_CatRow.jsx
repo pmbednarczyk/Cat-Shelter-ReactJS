@@ -5,9 +5,10 @@ export class CatRow extends React.Component {
 
     render() {
         return (
-            <div>
-                <h3>Hello It's CatRow!</h3>
-            </div>
+            <tr>
+                <td>{this.props.name}</td>
+                <td>{this.props.age}</td>
+            </tr>
         )
     }
 }

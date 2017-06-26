@@ -9805,20 +9805,7 @@ var CatTable = exports.CatTable = function (_React$Component) {
             });
 
             var catsRows = cats.map(function (cat, age) {
-                return _react2.default.createElement(
-                    'tr',
-                    { key: cat.name + cat.age },
-                    _react2.default.createElement(
-                        'td',
-                        null,
-                        cat.name
-                    ),
-                    _react2.default.createElement(
-                        'td',
-                        null,
-                        cat.age
-                    )
-                );
+                return _react2.default.createElement(_CatRow.CatRow, { key: cat.name, age: cat.age, name: cat.name });
             });
             return catsRows;
         }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -9875,9 +9862,7 @@ var CatTable = exports.CatTable = function (_React$Component) {
                         ),
                         this.getCats("female")
                     )
-                ),
-                _react2.default.createElement(_CategoryRow.CategoryRow, null),
-                _react2.default.createElement(_CatRow.CatRow, null)
+                )
             );
         }
     }]);
@@ -10005,12 +9990,17 @@ var CatRow = exports.CatRow = function (_React$Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                'tr',
                 null,
                 _react2.default.createElement(
-                    'h3',
+                    'td',
                     null,
-                    'Hello It\'s CatRow!'
+                    this.props.name
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.props.age
                 )
             );
         }

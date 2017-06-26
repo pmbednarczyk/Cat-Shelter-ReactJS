@@ -10,10 +10,7 @@ export class CatTable extends React.Component {
         });
 
         const catsRows = cats.map((cat, age) => {
-            return (<tr key={cat.name + cat.age}>
-                <td >{cat.name}</td>
-                <td>{cat.age}</td>
-            </tr>);
+            return <CatRow key={cat.name} age={cat.age} name={cat.name}/>;
         });
         return catsRows;
     };
@@ -40,8 +37,6 @@ export class CatTable extends React.Component {
                     {this.getCats("female")}
                     </tbody>
                 </table>
-                <CategoryRow/>
-                <CatRow/>
             </div>
         )
     }
