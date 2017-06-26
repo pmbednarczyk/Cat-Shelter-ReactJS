@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const kitties2 = this.props.kitties.filter(cat => {
                 if(this.state.likesKids && !cat.likesKids) {
                     return false;
-                };
+                }
 
-                if (this.state.filterText.length > 0 && cat.name.indexOf(this.state.filterText) === -1) {
+                if (this.state.filterText.length > 0 && cat.name.toLowerCase().indexOf(this.state.filterText.toLowerCase()) === -1) {
                     return false;
                 }
 
@@ -58,7 +58,19 @@ document.addEventListener('DOMContentLoaded', () => {
         {category: "male", age: "7", likesKids: true, name: "John Bambo"},
         {category: "male", age: "12", likesKids: true, name: "Wet Prince"},
         {category: "female", age: "2", likesKids: true, name: "Merciless"},
-        {category: "male", age: "7", likesKids: false, name: "Spacetraveler"}
+        {category: "male", age: "7", likesKids: false, name: "Spacetraveler"},
+        {category: "male", age: "25", likesKids: true, name: "Luke Skywhisker"},
+        {category: "male", age: "9", likesKids: true, name: "Felix"},
+        {category: "male", age: "2", likesKids: false, name: "Karate Cat"},
+        {category: "female", age: "1", likesKids: true, name: "Gonzalez"},
+        {category: "female", age: "2", likesKids: false, name: "Grażyna"},
+        {category: "female", age: "3", likesKids: true, name: "Demi Meower"},
+        {category: "female", age: "20", likesKids: true, name: "Katy Purry"},
+        {category: "male", age: "1", likesKids: false, name: "Anderson Pooper"},
+        {category: "male", age: "7", likesKids: true, name: "Picatso"},
+        {category: "male", age: "12", likesKids: true, name: "Santa Claws"},
+        {category: "female", age: "2", likesKids: true, name: "Oprah Whisker"},
+        {category: "female", age: "7", likesKids: false, name: "Jessicat"}
     ];
 
     ReactDOM.render(
