@@ -5,11 +5,17 @@ import {SearchBar} from './components/SearchBar.jsx';
 
 document.addEventListener('DOMContentLoaded', () => {
     class App extends React.Component {
-
+        constructor() {
+            super(...arguments);
+            this.state = {
+                filterText: 'ddd',
+                likesKids: true
+            }
+        }
         render() {
             return (
                 <section>
-                    <SearchBar/>
+                    <SearchBar filterText={this.state.filterText} likesKids={this.state.likesKids}/>
                     <CatTable kitties={this.props.kitties}/>
                 </section>
             )

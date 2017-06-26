@@ -9920,7 +9920,7 @@ var SearchBar = exports.SearchBar = function (_React$Component) {
                         _react2.default.createElement(
                             "label",
                             null,
-                            _react2.default.createElement("input", { type: "text" })
+                            _react2.default.createElement("input", { type: "text", value: this.props.filterText })
                         )
                     ),
                     _react2.default.createElement(
@@ -9929,7 +9929,7 @@ var SearchBar = exports.SearchBar = function (_React$Component) {
                         _react2.default.createElement(
                             "label",
                             null,
-                            _react2.default.createElement("input", { type: "checkbox" }),
+                            _react2.default.createElement("input", { type: "checkbox", value: this.props.likesKids }),
                             " Only show cats that like kids"
                         )
                     )
@@ -10098,7 +10098,13 @@ document.addEventListener('DOMContentLoaded', function () {
         function App() {
             _classCallCheck(this, App);
 
-            return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+            var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+
+            _this.state = {
+                filterText: 'ddd',
+                likesKids: true
+            };
+            return _this;
         }
 
         _createClass(App, [{
@@ -10107,7 +10113,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return _react2.default.createElement(
                     'section',
                     null,
-                    _react2.default.createElement(_SearchBar.SearchBar, null),
+                    _react2.default.createElement(_SearchBar.SearchBar, { filterText: this.state.filterText, likesKids: this.state.likesKids }),
                     _react2.default.createElement(_CatTable.CatTable, { kitties: this.props.kitties })
                 );
             }

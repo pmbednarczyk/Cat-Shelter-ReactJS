@@ -5,8 +5,8 @@ export class SearchBar extends React.Component {
         return (
             <header>
                 <form>
-                    <div><label><input type="text"/></label></div>
-                    <div><label><input type="checkbox"/> Only show cats that like kids</label></div>
+                    <div><label><input type="text" value={this.props.filterText}/></label></div>
+                    <div><label><input type="checkbox" value={this.props.likesKids}/> Only show cats that like kids</label></div>
                 </form>
             </header>
         )
