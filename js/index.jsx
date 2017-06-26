@@ -52,7 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
         {category: "male", age: "2", likesKids: false, name: "Grumpy"},
         {category: "female", age: "1", likesKids: true, name: "Jude Paw"},
         {category: "female", age: "2", likesKids: false, name: "Lucifurr"},
-        {category: "female", age: "3", likesKids: true, name: "Meowly Cyrus"}
+        {category: "female", age: "3", likesKids: true, name: "Meowly Cyrus"},
+        {category: "female", age: "20", likesKids: true, name: "Granny Meow"},
+        {category: "male", age: "1", likesKids: false, name: "The Beast"},
+        {category: "male", age: "7", likesKids: true, name: "John Bambo"},
+        {category: "male", age: "12", likesKids: true, name: "Wet Prince"},
+        {category: "female", age: "2", likesKids: true, name: "Merciless"},
+        {category: "male", age: "7", likesKids: false, name: "Spacetraveler"}
     ];
 
     ReactDOM.render(

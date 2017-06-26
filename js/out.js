@@ -9773,8 +9773,6 @@ var _react = __webpack_require__(20);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _CategoryRow = __webpack_require__(86);
-
 var _CatRow = __webpack_require__(85);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -9816,7 +9814,7 @@ var CatTable = exports.CatTable = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
+                { className: 'cats-container' },
                 _react2.default.createElement(
                     'table',
                     null,
@@ -9843,21 +9841,21 @@ var CatTable = exports.CatTable = function (_React$Component) {
                         null,
                         _react2.default.createElement(
                             'tr',
-                            null,
+                            { className: 'kitties-sex' },
                             _react2.default.createElement(
                                 'th',
                                 { colSpan: '2' },
-                                'male'
+                                'Male kitties'
                             )
                         ),
                         this.getCats("male"),
                         _react2.default.createElement(
                             'tr',
-                            null,
+                            { className: 'kitties-sex' },
                             _react2.default.createElement(
                                 'th',
                                 { colSpan: '2' },
-                                'female'
+                                'Female kitties'
                             )
                         ),
                         this.getCats("female")
@@ -9888,6 +9886,8 @@ var _react = __webpack_require__(20);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _CategoryRow = __webpack_require__(86);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9906,31 +9906,34 @@ var SearchBar = exports.SearchBar = function (_React$Component) {
     }
 
     _createClass(SearchBar, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "header",
+                'header',
                 null,
+                _react2.default.createElement(_CategoryRow.CategoryRow, null),
                 _react2.default.createElement(
-                    "form",
+                    'form',
                     null,
                     _react2.default.createElement(
-                        "div",
+                        'div',
                         null,
                         _react2.default.createElement(
-                            "label",
+                            'label',
                             null,
-                            _react2.default.createElement("input", { type: "text", onChange: this.props.onTextChange, value: this.props.filterText })
+                            _react2.default.createElement('input', { type: 'text',
+                                placeholder: 'Kitty name...',
+                                onChange: this.props.onTextChange, value: this.props.filterText })
                         )
                     ),
                     _react2.default.createElement(
-                        "div",
+                        'div',
                         null,
                         _react2.default.createElement(
-                            "label",
+                            'label',
                             null,
-                            _react2.default.createElement("input", { type: "checkbox", onChange: this.props.onCheckboxChange, value: "1" }),
-                            " Only show cats that like kids"
+                            _react2.default.createElement('input', { type: 'checkbox', onChange: this.props.onCheckboxChange, value: '1' }),
+                            ' Only show cats that like kids'
                         )
                     )
                 )
@@ -10051,9 +10054,9 @@ var CategoryRow = exports.CategoryRow = function (_React$Component) {
                 'div',
                 null,
                 _react2.default.createElement(
-                    'h3',
+                    'h1',
                     null,
-                    'Hello It\'s CategoryRow!'
+                    'Find kitty which fits your needs!'
                 )
             );
         }
@@ -10147,7 +10150,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return App;
     }(_react2.default.Component);
 
-    var kitties = [{ category: "male", age: "4", likesKids: true, name: "Fidel Catstro" }, { category: "male", age: "9", likesKids: true, name: "Hairy Potter" }, { category: "male", age: "2", likesKids: false, name: "Grumpy" }, { category: "female", age: "1", likesKids: true, name: "Jude Paw" }, { category: "female", age: "2", likesKids: false, name: "Lucifurr" }, { category: "female", age: "3", likesKids: true, name: "Meowly Cyrus" }];
+    var kitties = [{ category: "male", age: "4", likesKids: true, name: "Fidel Catstro" }, { category: "male", age: "9", likesKids: true, name: "Hairy Potter" }, { category: "male", age: "2", likesKids: false, name: "Grumpy" }, { category: "female", age: "1", likesKids: true, name: "Jude Paw" }, { category: "female", age: "2", likesKids: false, name: "Lucifurr" }, { category: "female", age: "3", likesKids: true, name: "Meowly Cyrus" }, { category: "female", age: "20", likesKids: true, name: "Granny Meow" }, { category: "male", age: "1", likesKids: false, name: "The Beast" }, { category: "male", age: "7", likesKids: true, name: "John Bambo" }, { category: "male", age: "12", likesKids: true, name: "Wet Prince" }, { category: "female", age: "2", likesKids: true, name: "Merciless" }, { category: "male", age: "7", likesKids: false, name: "Spacetraveler" }];
 
     _reactDom2.default.render(_react2.default.createElement(App, { kitties: kitties }), document.querySelector('#app'));
 });

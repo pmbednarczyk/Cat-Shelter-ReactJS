@@ -1,5 +1,4 @@
 import React from 'react';
-import {CategoryRow} from './_CategoryRow.jsx';
 import {CatRow} from './_CatRow.jsx';
 
 export class CatTable extends React.Component {
@@ -17,7 +16,7 @@ export class CatTable extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="cats-container">
                 <table>
                     <thead>
                     <tr>
@@ -26,13 +25,13 @@ export class CatTable extends React.Component {
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th colSpan="2">male</th>
+                    <tr className="kitties-sex" >
+                        <th colSpan="2">Male kitties</th>
                     </tr>
                     {this.getCats("male")}
 
-                    <tr>
-                        <th colSpan="2">female</th>
+                    <tr className="kitties-sex">
+                        <th colSpan="2">Female kitties</th>
                     </tr>
                     {this.getCats("female")}
                     </tbody>
