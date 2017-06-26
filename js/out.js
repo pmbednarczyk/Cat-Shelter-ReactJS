@@ -9850,15 +9850,33 @@ var SearchBar = exports.SearchBar = function (_React$Component) {
     }
 
     _createClass(SearchBar, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                "header",
                 null,
                 _react2.default.createElement(
-                    'h2',
+                    "form",
                     null,
-                    'Hello It\'s SearchBar  component here!'
+                    _react2.default.createElement(
+                        "div",
+                        null,
+                        _react2.default.createElement(
+                            "label",
+                            null,
+                            _react2.default.createElement("input", { type: "text" })
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        null,
+                        _react2.default.createElement(
+                            "label",
+                            null,
+                            _react2.default.createElement("input", { type: "checkbox" }),
+                            " Only show cats that like kids"
+                        )
+                    )
                 )
             );
         }
@@ -10026,22 +10044,94 @@ document.addEventListener('DOMContentLoaded', function () {
             key: 'render',
             value: function render() {
                 return _react2.default.createElement(
-                    'div',
+                    'section',
                     null,
+                    _react2.default.createElement(_SearchBar.SearchBar, null),
                     _react2.default.createElement(
-                        'h1',
+                        'table',
                         null,
-                        'Hello World!'
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement(_SearchBar.SearchBar, null)
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement(_CatTable.CatTable, null)
+                        _react2.default.createElement(
+                            'thead',
+                            null,
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'th',
+                                    null,
+                                    'Name'
+                                ),
+                                _react2.default.createElement(
+                                    'th',
+                                    null,
+                                    'Age'
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'tbody',
+                            null,
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'th',
+                                    { colSpan: '2' },
+                                    'male'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    'Fidel'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '4'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    'Fidel'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '4'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'th',
+                                    { colSpan: '2' },
+                                    'female'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    'Yude'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '4'
+                                )
+                            )
+                        )
                     )
                 );
             }

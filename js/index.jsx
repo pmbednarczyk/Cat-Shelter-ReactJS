@@ -1,22 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { CatTable } from './components/CatTable.jsx';
-import { SearchBar } from './components/SearchBar.jsx';
+import {CatTable} from './components/CatTable.jsx';
+import {SearchBar} from './components/SearchBar.jsx';
 
 document.addEventListener('DOMContentLoaded', () => {
     class App extends React.Component {
 
         render() {
             return (
-                <div>
-                    <h1>Hello World!</h1>
-                    <div>
-                        <SearchBar/>
-                    </div>
-                    <div>
-                        <CatTable/>
-                    </div>
-                </div>
+                <section>
+                    <SearchBar/>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th colSpan="2">male</th>
+                        </tr>
+                        <tr>
+                            <td>Fidel</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Fidel</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <th colSpan="2">female</th>
+                        </tr>
+                        <tr>
+                            <td>Yude</td>
+                            <td>4</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
             )
         }
     }
@@ -31,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     ReactDOM.render(
-        <App kitties={kitties} />,
+        <App kitties={kitties}/>,
         document.querySelector('#app')
     );
 });
