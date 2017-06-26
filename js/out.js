@@ -9920,7 +9920,7 @@ var SearchBar = exports.SearchBar = function (_React$Component) {
                         _react2.default.createElement(
                             "label",
                             null,
-                            _react2.default.createElement("input", { type: "text", value: this.props.filterText })
+                            _react2.default.createElement("input", { type: "text", onChange: this.props.onTextChange, value: this.props.filterText })
                         )
                     ),
                     _react2.default.createElement(
@@ -9929,7 +9929,7 @@ var SearchBar = exports.SearchBar = function (_React$Component) {
                         _react2.default.createElement(
                             "label",
                             null,
-                            _react2.default.createElement("input", { type: "checkbox", value: this.props.likesKids }),
+                            _react2.default.createElement("input", { type: "checkbox", onChange: this.props.onCheckboxChange, value: "1" }),
                             " Only show cats that like kids"
                         )
                     )
@@ -10100,9 +10100,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
             var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
 
+            _this.handleTextChange = function (event) {
+                _this.setState({
+                    filterText: event.target.value
+                });
+            };
+
+            _this.handleCheckboxChange = function (event) {
+                _this.setState({
+                    likesKids: event.target.checked
+                });
+            };
+
             _this.state = {
-                filterText: 'ddd',
-                likesKids: true
+                filterText: '',
+                likesKids: false
             };
             return _this;
         }
@@ -10110,11 +10122,24 @@ document.addEventListener('DOMContentLoaded', function () {
         _createClass(App, [{
             key: 'render',
             value: function render() {
+                var _this2 = this;
+
+                var kitties2 = this.props.kitties.filter(function (cat) {
+                    if (_this2.state.likesKids && !cat.likesKids) {
+                        return false;
+                    };
+
+                    if (_this2.state.filterText.length > 0 && cat.name.indexOf(_this2.state.filterText) === -1) {
+                        return false;
+                    }
+
+                    return true;
+                });
                 return _react2.default.createElement(
                     'section',
                     null,
-                    _react2.default.createElement(_SearchBar.SearchBar, { filterText: this.state.filterText, likesKids: this.state.likesKids }),
-                    _react2.default.createElement(_CatTable.CatTable, { kitties: this.props.kitties })
+                    _react2.default.createElement(_SearchBar.SearchBar, { onTextChange: this.handleTextChange, onCheckboxChange: this.handleCheckboxChange, filterText: this.state.filterText, likesKids: this.state.likesKids }),
+                    _react2.default.createElement(_CatTable.CatTable, { kitties: kitties2 })
                 );
             }
         }]);
