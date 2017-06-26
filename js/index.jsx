@@ -10,34 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return (
                 <section>
                     <SearchBar/>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Age</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th colSpan="2">male</th>
-                        </tr>
-                        <tr>
-                            <td>Fidel</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>Fidel</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <th colSpan="2">female</th>
-                        </tr>
-                        <tr>
-                            <td>Yude</td>
-                            <td>4</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <CatTable kitties={this.props.kitties}/>
                 </section>
             )
         }

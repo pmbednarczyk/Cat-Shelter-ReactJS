@@ -9797,13 +9797,95 @@ var CatTable = exports.CatTable = function (_React$Component) {
     _createClass(CatTable, [{
         key: 'render',
         value: function render() {
+            console.log(this.props.kitties);
             return _react2.default.createElement(
                 'div',
                 null,
                 _react2.default.createElement(
-                    'h2',
+                    'table',
                     null,
-                    'Hello It\'s CatTable component here!'
+                    _react2.default.createElement(
+                        'thead',
+                        null,
+                        _react2.default.createElement(
+                            'tr',
+                            null,
+                            _react2.default.createElement(
+                                'th',
+                                null,
+                                'Name'
+                            ),
+                            _react2.default.createElement(
+                                'th',
+                                null,
+                                'Age'
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'tbody',
+                        null,
+                        _react2.default.createElement(
+                            'tr',
+                            null,
+                            _react2.default.createElement(
+                                'th',
+                                { colSpan: '2' },
+                                'male'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'tr',
+                            null,
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                'Fidel'
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                '4'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'tr',
+                            null,
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                'Fidel'
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                '4'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'tr',
+                            null,
+                            _react2.default.createElement(
+                                'th',
+                                { colSpan: '2' },
+                                'female'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'tr',
+                            null,
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                'Yude'
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                '4'
+                            )
+                        )
+                    )
                 ),
                 _react2.default.createElement(_CategoryRow.CategoryRow, null),
                 _react2.default.createElement(_CatRow.CatRow, null)
@@ -10047,92 +10129,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     'section',
                     null,
                     _react2.default.createElement(_SearchBar.SearchBar, null),
-                    _react2.default.createElement(
-                        'table',
-                        null,
-                        _react2.default.createElement(
-                            'thead',
-                            null,
-                            _react2.default.createElement(
-                                'tr',
-                                null,
-                                _react2.default.createElement(
-                                    'th',
-                                    null,
-                                    'Name'
-                                ),
-                                _react2.default.createElement(
-                                    'th',
-                                    null,
-                                    'Age'
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'tbody',
-                            null,
-                            _react2.default.createElement(
-                                'tr',
-                                null,
-                                _react2.default.createElement(
-                                    'th',
-                                    { colSpan: '2' },
-                                    'male'
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'tr',
-                                null,
-                                _react2.default.createElement(
-                                    'td',
-                                    null,
-                                    'Fidel'
-                                ),
-                                _react2.default.createElement(
-                                    'td',
-                                    null,
-                                    '4'
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'tr',
-                                null,
-                                _react2.default.createElement(
-                                    'td',
-                                    null,
-                                    'Fidel'
-                                ),
-                                _react2.default.createElement(
-                                    'td',
-                                    null,
-                                    '4'
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'tr',
-                                null,
-                                _react2.default.createElement(
-                                    'th',
-                                    { colSpan: '2' },
-                                    'female'
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'tr',
-                                null,
-                                _react2.default.createElement(
-                                    'td',
-                                    null,
-                                    'Yude'
-                                ),
-                                _react2.default.createElement(
-                                    'td',
-                                    null,
-                                    '4'
-                                )
-                            )
-                        )
-                    )
+                    _react2.default.createElement(_CatTable.CatTable, { kitties: this.props.kitties })
                 );
             }
         }]);
